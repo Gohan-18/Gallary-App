@@ -1,0 +1,17 @@
+* {
+    padding: none;
+    margin: none;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#main-field {
+    
+}
