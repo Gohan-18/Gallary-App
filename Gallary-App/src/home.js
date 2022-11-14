@@ -11,37 +11,38 @@ search.addEventListener("change", (event) => {
     searchTag = event.target.value;
 })
 
-// const GET_IMG_URL_custom = `https://pixabay.com/api?key=${API_KEY2}&q=${searchTag}`;
+// const GET_IMG_URL_custom = `https://pixabay.com/api?key=${API_KEY2}&q=${searchTag}`;`https://pixabay.com/api?key=${API_KEY2}&q=${searchTag}`
 
 submitBtn.addEventListener("click", () => {
     console.log(searchTag)
-    fetch(`https://pixabay.com/api?key=${API_KEY2}&q=${searchTag}`)
+    fetch(`https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchTag}&per_page=30`)
     .then(res => res.json())
     .then(data => {
-        allImages = data.hits;
+        // allImages = data.hits;
+        allImages = data.results;
         console.log(allImages);
         makeImages(allImages);
     });
 })
 
-const makeImages = (data) => {
-    data.map(data => {
-        let img = document.createElement('img');
-        img.src = data.largeImageURL;
-        img.key = data.id;
-        img.className = 'gallary-image';
-        imageField.appendChild(img);
-    })
-}
-
-
 // const makeImages = (data) => {
 //     data.map(data => {
 //         let img = document.createElement('img');
-//         img.src = data.urls.small;
+//         img.src = data.largeImageURL;
 //         img.key = data.id;
 //         img.className = 'gallary-image';
 //         imageField.appendChild(img);
 //     })
 // }
+
+
+const makeImages = (data) => {
+    data.map(data => {
+        let img = document.createElement('img');
+        img.src = data.urls.small;
+        img.key = data.id;
+        img.className = 'gallary-image';
+        imageField.appendChild(img);
+    })
+}
 
