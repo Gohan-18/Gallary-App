@@ -12,15 +12,9 @@ search.addEventListener("change", (event) => {
     searchTag = event.target.value;
 })
 
-// const GET_IMG_URL_custom = `https://pixabay.com/api?key=${API_KEY2}&q=${searchTag}`;`https://pixabay.com/api?key=${API_KEY2}&q=${searchTag}`
-
-submitBtn.addEventListener("click", async () => {
+const fetchData = () => {
     console.log(searchTag)
-
-    // let imgRenderField = document.querySelector("#gallary-class");
-    // imgRenderField.remove();
-
-    await fetch(`https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchTag}&per_page=30`)
+    fetch(`https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchTag}&per_page=30`)
     .then(res => res.json())
     .then(data => {
         // allImages = data.hits;
@@ -28,7 +22,19 @@ submitBtn.addEventListener("click", async () => {
         console.log(allImages);
         makeImages(allImages);
     });
-})
+}
+
+// const GET_IMG_URL_custom = `https://pixabay.com/api?key=${API_KEY2}&q=${searchTag}`;`https://pixabay.com/api?key=${API_KEY2}&q=${searchTag}`
+
+submitBtn.addEventListener("click", fetchData)
+
+// document.addEventListener("keydown" , (event) => {
+//     console.log(event.key);
+//     if(event.key === 'Enter') {
+        
+//     }
+// })
+
 
 // const makeImages = (data) => {
 //     data.map(data => {
@@ -59,4 +65,3 @@ const makeImages = (data) => {
         gallaryClass.appendChild(img);
     })
 }
-
