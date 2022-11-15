@@ -41,7 +41,7 @@ const makeImages = (data) => {
     imageField.appendChild(gallaryClass);
     data.map(data => {
         let img = document.createElement('img');
-        img.style.height = "350px";
+        // img.style.height = "350px";
         img.style.width = "350px";
         img.src = data.urls.regular;
         img.key = data.id;
