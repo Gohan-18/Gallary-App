@@ -1,13 +1,13 @@
 const API_KEY = "JIiTGGkMz0PshhK76-PKRRkM1VplhiViGoRJNYG9yUw";
 const search = document.querySelector("#input-field");
-const submitBtn = document.querySelector("#submit-btn");
+const searchBtn = document.querySelector("#search-btn-search-result");
 const imageField = document.querySelector("#main-field");
 let allImages;
 let searchTag;
 
-search.addEventListener("change", (event) => {
-    searchTag = event.target.value;
-})
+// search.addEventListener("change", (event) => {
+//     searchTag = event.target.value;
+// })
 
 // const fetchData = () => {
 //     console.log(searchTag)
@@ -17,18 +17,18 @@ search.addEventListener("change", (event) => {
 //         // allImages = data.hits;
 //         allImages = data.results;
 //         console.log(allImages);
-//         makeImages(allImages);
+//         makeImagesSearch(allImages);
 //     });
 // }
 
-// submitBtn.addEventListener("click", fetchData)
+// searchBtn.addEventListener("click", fetchData)
 
-// document.addEventListener("keyup" , (event) => {
-//     console.log(event.key);
-//     if(event.key === 'Enter') {
-//         fetchData();
-//     }
-// })
+document.addEventListener("keyup" , (event) => {
+    console.log(event.key);
+    if(event.key === 'Enter') {
+        fetchData();
+    }
+})
 
 const fetchDefaultData = () => {
     console.log(searchTag)
@@ -42,7 +42,7 @@ const fetchDefaultData = () => {
     });
 }
 
-// const makeImages = (data) => {
+// const makeImagesSearch = (data) => {
 
 //     let imgRenderField = document.querySelector("#gallary-class");
 //     imgRenderField.remove();
@@ -71,18 +71,35 @@ const makeImages = (data) => {
     imageField.appendChild(gallaryClass);
     data.map(data => {
         let img = document.createElement('img');
-        img.style.height = "350px";
-        img.style.width = "350px";
+        // img.style.height = "350px";
+        // img.style.width = "350px";
         img.src = data.urls.regular;
         img.key = data.id;
         img.className = 'gallary-image';
         gallaryClass.appendChild(img);
+
+        img.addEventListener("click", () => {
+            // let currentImage = index;
+            showPopup(data);
+        })
     })
 }
 
 fetchDefaultData();
 
+const showPopup = (item) => {
+    let popup = document.querySelector(".image-popup");
+    const downloadBtn = document.querySelector(".download-btn");
+    const closeBtn = document.querySelector(".close-btn");
+    const img = document.querySelector(".large-img");
 
+    popup.classList.remove("hide-popup");
+    downloadBtn.href = item.links.html;
+    closeBtn.addEventListener("click", () => {
+        popup.classList.add("hide-popup");
+    })
+    img.src = item.urls.regular;
+}
 
 // PixaBay API code below :-
 
