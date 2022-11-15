@@ -58,7 +58,7 @@ table {
 }
 
 .search-container {
-    background: url("assets/mountain-background1.jpg");
+    background: url("assets/forrest-background.jpg");
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,51 +95,69 @@ section {
     font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 10px 20px;
     font-size: 0.8rem;
     width: calc(100% - 50px);
     margin: 1rem;
+    background-color: #e2e3e4;
+    cursor: pointer;
+}
+
+.search-box:focus {
+    cursor: text;
 }
 
 #submit-btn {
     font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
-    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
     border: none;
-    border-radius: 10px;
+    border-radius: 7px;
     cursor: pointer;
-    padding: 5px 20px;
+    padding: 10px 30px;
     width: fit-content;
+    background-color: #202425bc;
+    color: #e2e3e4;
+    transition: 0.5s;
+}
 
+#submit-btn:hover {
+    /* transform: scale(1.1); */
+    background-color: #1e1d1d;
 }
 
 #gallary-class {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    /* width: calc(100%-20px); */
+    width: calc(100%-20px);
     margin: 0px 40px;
+    padding: 40px 0 40px 0;
+    gap: 20px;
+}
+
+/* #gallary-class {
     padding-top: 40px;
-    /* gap: 20px; */
-}
-
-.gallary-class {
-    
-}
-
-/* #input-field {
-    background: none;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 500px;
-    margin: 20px;
-    outline: none;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 350px));
+    grid-auto-rows: 300px;
+    gap: 20px;
 } */
+
+.gallary-image {
+    height: 350px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.gallary-image:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+}
 
 .custom-scroll {
     overflow-x: auto;
@@ -162,3 +180,29 @@ section {
 .custom-scroll::-webkit-scrollbar-thumb:hover {
     background-color: #9b9a9a;
 }
+
+/* #main-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#gallary-class {
+    display: flex;
+    flex-direction: column;
+    width: 32.5px;
+} */
+
+
+/* #input-field {
+    background: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
+    outline: none;
+
+} */
