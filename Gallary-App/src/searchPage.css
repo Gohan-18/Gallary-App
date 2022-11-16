@@ -21,7 +21,9 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -52,72 +54,53 @@ table {
 * {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
-    box-sizing: border-box;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.search-container {
-    background: url("assets/forrest-background.jpg");
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    margin-bottom: 20px;
-    padding-bottom: 60px;
-}
-
-.header-logo {
-    font-family: "Poppins", sans-serif;
-    color: #192f2e;
-    font-size: 3rem;
-    font-weight: 700;
-    padding: 20px 30px;
-    border-bottom: 3px dotted #192f2e;
-    margin: 10px 0;
-}
-
-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-family: 'Poppins', sans-serif;
-    color: #e2e3e4;
-    width: 100%;
-    max-width: 500px;
-    margin: 20px;
-    padding: 30px 30px;
-    border-radius: 20px;
-}
-
-.search-box {
+.search-result-box {
+    height: 1.2rem;
     outline: none;
-    color: #9b9a9a;
+    color: #585858;
     font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
     font-size: 0.8rem;
-    width: calc(100% - 50px);
     margin: 1rem;
     background-color: #e2e3e4;
     cursor: pointer;
+    flex: 1;
 }
 
-.search-box:focus {
+.search-result-box:focus {
     cursor: text;
 }
 
-#submit-btn {
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px 0 30px;
+}
+
+.search-result-header {
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    border: 3px solid #1e1d1d;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    color: #1e1d1d;
+}
+
+.search-result-header:hover {
+    background-color: #1e1d1d;
+    color: #fbfbfb;
+}
+
+#search-btn-search-result {
     font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     text-align: center;
@@ -128,13 +111,19 @@ form {
     padding: 10px 30px;
     width: fit-content;
     background-color: #202425bc;
-    color: #e2e3e4;
+    color: #fbfbfb;
     transition: 0.5s;
 }
 
-#submit-btn:hover {
+#search-btn-search-result:hover {
     /* transform: scale(1.1); */
     background-color: #1e1d1d;
+}
+
+#main-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #gallary-class {
@@ -154,7 +143,6 @@ form {
     border-radius: 8px;
     object-fit: cover;
     transition: 0.5s;
-    background-color: #9b9a9a;
 }
 
 .gallary-image:hover {
@@ -183,6 +171,8 @@ form {
 .custom-scroll::-webkit-scrollbar-thumb:hover {
     background-color: #9b9a9a;
 }
+
+
 
 /* Image Pop Up */
 
@@ -228,10 +218,17 @@ form {
     top: 20px;
 }
 
+.popup-img-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .large-img {
-    height: 80%;
+    height: 70%;
     width: auto;
-    max-width: 80%;
+    max-width: 70%;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -240,69 +237,3 @@ form {
     display: none;
     opacity: 0;
 }
-
-@media (max-width:600px) {
-    #gallary-class {
-        width: calc(100%-10px);
-    }
-
-    .gallary-image {
-        width: 300px;
-        height: 300px;
-    }
-}
-
-@media (max-width:400px) {
-
-    #gallary-class {
-        width: calc(100%-10px);
-    }
-
-    .gallary-image {
-        width: 270px;
-        height: 270px;
-    }
-}
-
-
-/* #main-field {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#gallary-class {
-    display: flex;
-    flex-direction: column;
-    width: 32.5px;
-} */
-
-
-/* #input-field {
-    background: none;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 500px;
-    margin: 20px;
-    outline: none;
-
-} */
-
-
-/* #gallary-class {
-    padding-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 350px));
-    grid-auto-rows: 300px;
-    gap: 20px;
-} */
-
-/* section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-} */
