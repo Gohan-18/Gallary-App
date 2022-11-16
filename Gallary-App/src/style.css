@@ -231,9 +231,9 @@ table {
 }
 
 .large-img {
-    height: 80%;
+    height: 70%;
     width: auto;
-    max-width: 80%;
+    max-width: 70%;
     object-fit: cover;
     border-radius: 10px;
 }

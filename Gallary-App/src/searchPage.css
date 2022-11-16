@@ -54,10 +54,10 @@ table {
 * {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 .search-result-box {
-    height: 1.2rem;
     outline: none;
     color: #585858;
     font-family: 'Poppins', sans-serif;
@@ -76,7 +76,7 @@ table {
     cursor: text;
 }
 
-section {
+.form-section {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,6 +138,7 @@ section {
 }
 
 .gallary-image {
+    background-color: #e2e3e4;
     height: 350px;
     width: 350px;
     border-radius: 8px;
@@ -218,13 +219,6 @@ section {
     top: 20px;
 }
 
-.popup-img-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
 .large-img {
     height: 70%;
     width: auto;
@@ -236,4 +230,48 @@ section {
 .hide-popup {
     display: none;
     opacity: 0;
+}
+
+/* For smaller screens */
+
+@media (max-width:600px) {
+    #gallary-class {
+        width: calc(100%-10px);
+    }
+
+    .gallary-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    #search-btn-search-result {
+        display: none;
+    }
+
+    .form-section {
+        flex-direction: column;
+    }
+
+    .search-result-box {
+        width: 100%;
+        /* text-align: center; */
+    }
+
+    #gallary-class {
+        padding-top: 10px;
+    }
+
+
+}
+
+@media (max-width:400px) {
+
+    #gallary-class {
+        width: calc(100%-10px);
+    }
+
+    .gallary-image {
+        width: 270px;
+        height: 270px;
+    }
 }
