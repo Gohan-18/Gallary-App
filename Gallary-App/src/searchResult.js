@@ -73,7 +73,7 @@ loadMoreBtn.addEventListener("click", () => {
     const makeImagesSearchNxtPage = (data) => {
     
         let gallaryClass = document.createElement('div');
-        gallaryClass.id = 'gallary-class';
+        gallaryClass.id = 'gallary-class-nxt';
         imageField.appendChild(gallaryClass);
         data.map(data => {
             let img = document.createElement('img');

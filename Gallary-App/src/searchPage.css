@@ -134,7 +134,18 @@ table {
     flex-wrap: wrap;
     width: calc(100%-20px);
     margin: 0px 40px;
-    padding: 40px 0 40px 0;
+    padding: 40px 0 20px 0;
+    gap: 20px;
+}
+
+#gallary-class-nxt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: calc(100%-20px);
+    margin: 0px 40px;
+    padding: 0px 0 20px 0;
     gap: 20px;
 }
 
@@ -154,19 +165,34 @@ table {
 
 .load-btn {
     font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px 60px;
+    width: fit-content;
+    background-color: #202425bc;
+    color: #fbfbfb;
+    transition: 0.5s;
+    margin: 20px 0 10px 0;
+    /* font-family: 'Poppins', sans-serif;
     font-size: 0.9rem;
     color: #192f2e;
     border: none;
     padding: 10px 20px;
+    margin: 20px 0 10px 0;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 500;
     background-color: #e2e3e4;
-    transition: 0.5s;
+    transition: 0.5s; */
 }
 
 .load-btn:hover {
-    background-color: #9b9a9a;
+    background-color: #1e1d1d;
+    /* background-color: #9b9a9a; */
 }
 
 .custom-scroll {
