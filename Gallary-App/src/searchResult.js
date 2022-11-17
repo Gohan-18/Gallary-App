@@ -35,6 +35,8 @@ const makeImagesSearch = (data) => {
             showPopup(data);
         })
     })
+
+    loadMoreBtn.classList.remove("hide");
 }
 
 const showPopup = (item) => {
