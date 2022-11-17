@@ -2,6 +2,8 @@ let searchParam = location.search.split('=').pop();
 const API_KEY = "JIiTGGkMz0PshhK76-PKRRkM1VplhiViGoRJNYG9yUw";
 let SEARCH_LINK = `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchParam}&per_page=30`;
 const imageField = document.querySelector("#main-field");
+const loadMoreBtn = document.querySelector(".load-btn");
+let pageNo = 1;
 let allImages;
 
 const fetchData = () => {
@@ -13,10 +15,6 @@ const fetchData = () => {
         makeImagesSearch(allImages);
     });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    fetchData();
-})
 
 const makeImagesSearch = (data) => {
 
@@ -53,6 +51,44 @@ const showPopup = (item) => {
     })
     img.src = item.urls.regular;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    fetchData();
+})
+
+loadMoreBtn.addEventListener("click", () => {
+    console.log("i am load more button...");
+
+    pageNo += 1;
+    let SEARCH_LINK = `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchParam}&page=${pageNo}&per_page=30`;
+
+    fetch(SEARCH_LINK)
+    .then(res => res.json())
+    .then(data => {
+        allImages = data.results;
+        console.log(allImages);
+        makeImagesSearchNxtPage(allImages);
+    });
+
+    const makeImagesSearchNxtPage = (data) => {
+    
+        let gallaryClass = document.createElement('div');
+        gallaryClass.id = 'gallary-class';
+        imageField.appendChild(gallaryClass);
+        data.map(data => {
+            let img = document.createElement('img');
+            img.src = data.urls.regular;
+            img.key = data.id;
+            img.className = 'gallary-image';
+            gallaryClass.appendChild(img);
+    
+            img.addEventListener("click", () => {
+                showPopup(data);
+            })
+        })
+    }
+
+})
 
 
 // const API_KEY = "JIiTGGkMz0PshhK76-PKRRkM1VplhiViGoRJNYG9yUw";
