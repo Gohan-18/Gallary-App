@@ -65,7 +65,7 @@ table {
 
 .search-container {
     background: url("assets/forrest-background.jpg");
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     /* object-fit: cover; */
     display: flex;
     align-items: center;
@@ -315,14 +315,6 @@ table {
 
 /* For smaller screens */
 
-@media (max-width:850px) {
-    .search-container {
-        background: url("assets/forrest-background-ipads.jpg");
-        background-repeat: no-repeat;
-    }
-}
-
-
 @media (max-width:600px) {
     #gallary-class {
         width: calc(100%-10px);
@@ -341,10 +333,6 @@ table {
 }
 
 @media (max-width:500px) {
-
-    .search-container {
-        background: url("assets/forrest-background-phones.jpg");
-    }
 
     .form-container {
         background: none;
