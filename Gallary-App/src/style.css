@@ -65,6 +65,7 @@ table {
 
 .search-container {
     background: url("assets/forrest-background.jpg");
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -59,6 +59,7 @@ const showPopup = (item) => {
 
     popup.classList.remove("hide-popup");
     downloadBtn.href = item.links.html;
+    downloadBtn.target = "_blank";
     closeBtn.addEventListener("click", () => {
         popup.classList.add("hide-popup");
     })
