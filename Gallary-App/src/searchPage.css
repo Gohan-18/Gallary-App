@@ -131,7 +131,7 @@ table {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: calc(100%-20px);
+    width: calc(100% - 20px);
     margin: 0px 40px;
     padding: 40px 0 20px 0;
     gap: 20px;
@@ -142,7 +142,7 @@ table {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: calc(100%-20px);
+    width: calc(100% - 20px);
     margin: 0px 40px;
     padding: 0px 0 20px 0;
     gap: 20px;
@@ -342,7 +342,7 @@ table {
 
 @media (max-width:600px) {
     #gallary-class {
-        width: calc(100%-10px);
+        width: calc(100% - 10px);
     }
 
     .gallary-image {
@@ -383,7 +383,7 @@ table {
 @media (max-width:400px) {
 
     #gallary-class {
-        width: calc(100%-10px);
+        width: calc(100% - 10px);
     }
 
     .gallary-image {
