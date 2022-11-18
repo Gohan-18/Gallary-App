@@ -151,6 +151,7 @@ table {
 
 .gallary-image {
     background-color: #e2e3e4;
+    border: none;
     height: 350px;
     width: 350px;
     border-radius: 8px;
@@ -174,12 +175,53 @@ table {
     padding: 10px 60px;
     width: fit-content;
     background-color: #202425bc;
-    color: #fbfbfb;
-    transition: 0.5s;
     margin: 20px 0 10px 0;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.btn--text {
+    font-family: 'Poppins', sans-serif;
+    color: #fbfbfb;
+    transition: all 0.2s;
+}
+
+.btn--loading .btn--text{
+    visibility: none;
+    opacity: 0;
+}
+
+.btn--loading::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #fbfbfb;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
 }
 
 .load-btn:hover {
+    background-color: #1e1d1d;
+}
+
+.load-btn:active {
     background-color: #1e1d1d;
 }
 
@@ -189,7 +231,6 @@ table {
 }
 
 .no-data-message {
-    font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     text-align: center;
     border: none;

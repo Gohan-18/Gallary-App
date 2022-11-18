@@ -3,7 +3,6 @@ const search = document.querySelector("#input-field");
 const searchBtn = document.querySelector("#search-btn-search-result");
 const imageField = document.querySelector("#main-field");
 let allImages;
-let searchTag;
 
 document.addEventListener("keyup" , (event) => {
     console.log(event.key);
@@ -13,13 +12,19 @@ document.addEventListener("keyup" , (event) => {
 })
 
 const fetchDefaultData = () => {
-    console.log(searchTag)
-    fetch(`https://api.unsplash.com/photos/random?client_id=${API_KEY}&count=30`)
+    fetch(`https://api.unsplash.com/photos/random?clientid=${API_KEY}&count=30`)
     .then(res => res.json())
     .then(data => {
         allImages = data;
         console.log(allImages);
         makeImages(allImages);
+    })
+    .catch(() => {
+        let noDataFound = document.createElement('h3');
+        noDataFound.className = 'no-data-message';
+        noDataFound.innerHTML = (`:( Couldn't fetch images...`).toUpperCase();
+        imageField.style.height = "50vh";
+        imageField.appendChild(noDataFound);
     });
 }
 

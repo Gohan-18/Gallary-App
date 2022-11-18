@@ -1,13 +1,13 @@
 let searchParam = location.search.split('=').pop();
 const API_KEY = "JIiTGGkMz0PshhK76-PKRRkM1VplhiViGoRJNYG9yUw";
-let SEARCH_LINK = `https://api.unsplash.com/search/photos/?client_i=${API_KEY}&query=${searchParam}&per_page=30`;
+let SEARCH_LINK = `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchParam}&per_page=30`;
 const imageField = document.querySelector("#main-field");
 const loadMoreBtn = document.querySelector(".load-btn");
 let pageNo = 1;
 let allImages;
 
-const fetchData = () => {
-    fetch(SEARCH_LINK)
+const fetchData = async () => {
+    await fetch(SEARCH_LINK)
     .then(res => res.json())
     .then(data => {
         allImages = data.results;
@@ -77,7 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 loadMoreBtn.addEventListener("click", () => {
-    console.log("i am load more button...");
+
+    loadMoreBtn.classList.add("btn--loading");
 
     pageNo += 1;
     let SEARCH_LINK = `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchParam}&page=${pageNo}&per_page=30`;
@@ -101,6 +102,8 @@ loadMoreBtn.addEventListener("click", () => {
             img.key = data.id;
             img.className = 'gallary-image';
             gallaryClass.appendChild(img);
+
+            loadMoreBtn.classList.remove("btn--loading");
     
             img.addEventListener("click", () => {
                 showPopup(data);
