@@ -6,8 +6,8 @@ const loadMoreBtn = document.querySelector(".load-btn");
 let pageNo = 1;
 let allImages;
 
-const fetchData = async () => {
-    await fetch(SEARCH_LINK)
+const fetchData = () => {
+    fetch(SEARCH_LINK)
     .then(res => res.json())
     .then(data => {
         allImages = data.results;
@@ -27,7 +27,7 @@ const fetchData = async () => {
     .catch(() => {
         let noDataFound = document.createElement('h3');
         noDataFound.className = 'no-data-message';
-        noDataFound.innerHTML = (`:( Couldn't fetch the searched result...`).toUpperCase();
+        noDataFound.innerHTML = (":( Couldn't fetch the result...").toUpperCase();
         imageField.style.height = "50vh";
         imageField.appendChild(noDataFound);
     })

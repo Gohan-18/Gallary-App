@@ -109,7 +109,9 @@ table {
     border-radius: 10px;
     padding: 10px 20px;
     font-size: 0.8rem;
-    width: calc(100% - 50px);
+    /* width: calc(100%-50px); */
+    width: 100%;
+    max-width: 300px;
     margin: 1rem;
     background-color: #e2e3e4;
     cursor: pointer;
@@ -144,7 +146,7 @@ table {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: calc(100% - 20px);
+    width: calc(100%-20px);
     margin: 0px 40px;
     padding: 40px 0 40px 0;
     gap: 20px;
@@ -163,6 +165,59 @@ table {
     cursor: pointer;
     transform: scale(1.04);
 }
+
+/* .load-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px 60px;
+    width: fit-content;
+    margin: 20px 0 10px 0;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.btn--text {
+    font-family: 'Poppins', sans-serif;
+    color: #fbfbfb;
+    transition: all 0.2s;
+}
+
+.btn--loading .btn--text{
+    display: none;
+}
+
+.btn--loading::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #fbfbfb;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+} */
+
+/* Scroll customisation */
 
 .custom-scroll {
     overflow-x: auto;
@@ -258,7 +313,7 @@ table {
 
 @media (max-width:600px) {
     #gallary-class {
-        width: calc(100% - 10px);
+        width: calc(100%-10px);
     }
 
     .gallary-image {
@@ -273,16 +328,21 @@ table {
     }
 }
 
-@media (max-width:450px) {
+@media (max-width:500px) {
     .form-container {
         background: none;
+        backdrop-filter: none;
+    }
+
+    .header-logo {
+        font-size: 2rem;
     }
 }
 
 @media (max-width:400px) {
 
     #gallary-class {
-        width: calc(100% - 10px);
+        width: calc(100%-10px);
     }
 
     .gallary-image {
