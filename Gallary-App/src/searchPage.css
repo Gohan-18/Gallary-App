@@ -188,6 +188,21 @@ table {
     opacity: 0;
 }
 
+.no-data-message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    border: none;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 10px 60px;
+    width: fit-content;
+    color: #585858;
+    /* margin: 200px 20px 0 20px; */
+    margin: 0 auto;
+    line-height: 2rem;
+}
+
 .custom-scroll {
     overflow-x: auto;
 }
@@ -278,6 +293,14 @@ table {
 
 /* For smaller screens */
 
+@media (max-width:850px) {
+    .no-data-message {
+        font-size: 1.2rem;
+        margin: 0 10px 0 10px;
+        padding: 0 0 0 0;
+    }
+}
+
 @media (max-width:600px) {
     #gallary-class {
         width: calc(100%-10px);
@@ -310,6 +333,12 @@ table {
         padding: 10px 40px;
     }
 
+    .no-data-message {
+        font-size: 0.8rem;
+        margin: 0 10px 0 10px;
+        padding: 0 0 0 0;
+    }
+
     
 }
 
@@ -328,6 +357,12 @@ table {
         font-size: 0.6rem;
         padding: 10px 30px;
         margin: 10px 0 0px 0;
+    }
+
+    .no-data-message {
+        font-size: 0.7rem;
+        margin: 0 5px 0 5px;
+        padding: 0 0 0 0 ;
     }
 
 }

@@ -1,6 +1,6 @@
 let searchParam = location.search.split('=').pop();
 const API_KEY = "JIiTGGkMz0PshhK76-PKRRkM1VplhiViGoRJNYG9yUw";
-let SEARCH_LINK = `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchParam}&per_page=30`;
+let SEARCH_LINK = `https://api.unsplash.com/search/photos/?client_i=${API_KEY}&query=${searchParam}&per_page=30`;
 const imageField = document.querySelector("#main-field");
 const loadMoreBtn = document.querySelector(".load-btn");
 let pageNo = 1;
@@ -12,8 +12,26 @@ const fetchData = () => {
     .then(data => {
         allImages = data.results;
         console.log(allImages);
-        makeImagesSearch(allImages);
-    });
+        if(allImages.length === 0){
+            console.log("no data found...");
+            let noDataFound = document.createElement('h3');
+            noDataFound.className = 'no-data-message';
+            noDataFound.innerHTML = (":( Couldn't get the searched result...").toUpperCase();
+            imageField.style.height = "50vh";
+            imageField.appendChild(noDataFound);
+        }
+        else{
+            makeImagesSearch(allImages);
+        }
+        // makeImagesSearch(allImages);
+    })
+    .catch(() => {
+        let noDataFound = document.createElement('h3');
+        noDataFound.className = 'no-data-message';
+        noDataFound.innerHTML = (`:( Couldn't fetch the searched result...`).toUpperCase();
+        imageField.style.height = "50vh";
+        imageField.appendChild(noDataFound);
+    })
 }
 
 const makeImagesSearch = (data) => {
