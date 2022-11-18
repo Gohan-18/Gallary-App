@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 
 /* CSS styling reset code */
 
@@ -47,8 +49,6 @@ table {
 
 /* My Code */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,500&display=swap');
-
 * {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
@@ -75,10 +75,10 @@ table {
 }
 
 .header-logo {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Monoton', cursive;
     color: #192f2e;
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 500;
     padding: 20px 30px;
     border-bottom: 3px dotted #192f2e;
     margin: 10px 0;
@@ -252,7 +252,6 @@ table {
     padding: 10px 60px;
     width: fit-content;
     color: #585858;
-    /* margin: 200px 20px 0 20px; */
     margin: 0 auto;
     line-height: 2rem;
 }
@@ -297,46 +296,3 @@ table {
         padding: 0 0 0 0 ;
     }
 }
-
-
-/* #main-field {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#gallary-class {
-    display: flex;
-    flex-direction: column;
-    width: 32.5px;
-} */
-
-
-/* #input-field {
-    background: none;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 500px;
-    margin: 20px;
-    outline: none;
-
-} */
-
-
-/* #gallary-class {
-    padding-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 350px));
-    grid-auto-rows: 300px;
-    gap: 20px;
-} */
-
-/* section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-} */

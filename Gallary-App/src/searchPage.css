@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 
 /* CSS styling reset code */
 
@@ -48,8 +50,6 @@ table {
 }
 
 /* My Code */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -116,7 +116,6 @@ table {
 }
 
 #search-btn-search-result:hover {
-    /* transform: scale(1.1); */
     background-color: #1e1d1d;
 }
 
@@ -239,7 +238,6 @@ table {
     padding: 10px 60px;
     width: fit-content;
     color: #585858;
-    /* margin: 200px 20px 0 20px; */
     margin: 0 auto;
     line-height: 2rem;
 }
@@ -362,7 +360,6 @@ table {
 
     .search-result-box {
         width: 100%;
-        /* text-align: center; */
     }
 
     #gallary-class {
