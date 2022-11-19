@@ -65,14 +65,13 @@ table {
 
 .search-container {
     background: url("assets/background-mountain.jpg");
-    /* background-repeat: no-repeat; */
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100%;
     margin-bottom: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
 }
 
 .header-logo {
@@ -166,43 +165,13 @@ table {
     transform: scale(1.04);
 }
 
-/* .load-btn {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
-    text-align: center;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    padding: 10px 60px;
-    width: fit-content;
-    margin: 20px 0 10px 0;
-    transition: all 0.5s;
-    position: relative;
-}
-
-.btn--text {
-    font-family: 'Poppins', sans-serif;
-    color: #fbfbfb;
-    transition: all 0.2s;
-}
-
-.btn--loading .btn--text{
-    display: none;
-}
-
-.btn--loading::after {
+.load-animation {
     content: "";
-    position: absolute;
-    width: 13px;
-    height: 13px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+    width: 30px;
+    height: 30px;
+    margin: 20px 20px 40px 20px;
     border: 4px solid transparent;
-    border-top-color: #fbfbfb;
+    border-top-color: #1e1d1d;
     border-radius: 50%;
     animation: button-loading-spinner 1s ease infinite;
 }
@@ -215,7 +184,7 @@ table {
     to {
         transform: rotate(1turn);
     }
-} */
+} 
 
 /* Scroll customisation */
 

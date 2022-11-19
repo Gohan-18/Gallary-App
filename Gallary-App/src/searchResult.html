@@ -15,7 +15,7 @@
         <header class="search-result-bar-container">
                 <form action="searchResult.html" class="form-section">
                     <a href="index.html"><h2 class="search-result-header">chróma</h2></a>
-                    <input id="input-field" name="search" class="search-result-box" type="text" placeholder="Search For Images..." />
+                    <input id="input-field" name="search" class="search-result-box" autocomplete="off" type="text" placeholder="Search For Images..." />
                     <button id="search-btn-search-result"  type="submit">
                         Search
                     </button>
@@ -29,6 +29,7 @@
         </div>
 
         <main id="main-field">
+            <div class="load-animation hide"></div>
             <div id="gallary-class"></div>
 
         </main>
@@ -39,7 +40,7 @@
 
     </div>
 
-    <script type="module" src="searchResult.js"></script>
+    <script type="module" src="searchResult.js" defer></script>
 
 </body>
 </html>

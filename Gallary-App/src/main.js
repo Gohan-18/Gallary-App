@@ -12,6 +12,9 @@ document.addEventListener("keyup" , (event) => {
 })
 
 const fetchDefaultData = () => {
+
+    imageField.classList.add("load-animation");
+
     fetch(`https://api.unsplash.com/photos/random?client_id=${API_KEY}&count=30`)
     .then(res => res.json())
     .then(data => {
@@ -20,6 +23,7 @@ const fetchDefaultData = () => {
         makeImages(allImages);
     })
     .catch(() => {
+        imageField.classList.remove("load-animation");
         let noDataFound = document.createElement('h3');
         noDataFound.className = 'no-data-message';
         noDataFound.innerHTML = (`:( Couldn't fetch images...`).toUpperCase();
@@ -41,6 +45,7 @@ const makeImages = (data) => {
         img.src = data.urls.regular;
         img.key = data.id;
         img.className = 'gallary-image';
+        imageField.classList.remove("load-animation");
         gallaryClass.appendChild(img);
 
         img.addEventListener("click", () => {

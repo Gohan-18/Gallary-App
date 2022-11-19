@@ -3,17 +3,22 @@ const API_KEY = "JIiTGGkMz0PshhK76-PKRRkM1VplhiViGoRJNYG9yUw";
 let SEARCH_LINK = `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchParam}&per_page=30`;
 const imageField = document.querySelector("#main-field");
 const loadMoreBtn = document.querySelector(".load-btn");
+const loadImageAnime = document.querySelector(".load-animation");
 let pageNo = 1;
 let allImages;
 
-const fetchData = () => {
-    fetch(SEARCH_LINK)
+const fetchData = async () => {
+
+    loadImageAnime.classList.remove("hide");
+
+    await fetch(SEARCH_LINK)
     .then(res => res.json())
     .then(data => {
         allImages = data.results;
         console.log(allImages);
         if(allImages.length === 0){
             console.log("no data found...");
+            loadImageAnime.classList.add("hide");
             let noDataFound = document.createElement('h3');
             noDataFound.className = 'no-data-message';
             noDataFound.innerHTML = (":( Couldn't get the searched result...").toUpperCase();
@@ -25,6 +30,7 @@ const fetchData = () => {
         }
     })
     .catch(() => {
+        loadImageAnime.classList.add("hide");
         let noDataFound = document.createElement('h3');
         noDataFound.className = 'no-data-message';
         noDataFound.innerHTML = (":( Couldn't fetch the result...").toUpperCase();
@@ -46,6 +52,7 @@ const makeImagesSearch = (data) => {
         img.src = data.urls.regular;
         img.key = data.id;
         img.className = 'gallary-image';
+        loadImageAnime.classList.add("hide");
         gallaryClass.appendChild(img);
 
         img.addEventListener("click", () => {
@@ -75,14 +82,14 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 })
 
-loadMoreBtn.addEventListener("click", () => {
+loadMoreBtn.addEventListener("click", async () => {
 
     loadMoreBtn.classList.add("btn--loading");
 
     pageNo += 1;
     let SEARCH_LINK = `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchParam}&page=${pageNo}&per_page=30`;
 
-    fetch(SEARCH_LINK)
+    await fetch(SEARCH_LINK)
     .then(res => res.json())
     .then(data => {
         allImages = data.results;
