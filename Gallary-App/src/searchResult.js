@@ -82,14 +82,14 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 })
 
-loadMoreBtn.addEventListener("click", async () => {
+loadMoreBtn.addEventListener("click", () => {
 
     loadMoreBtn.classList.add("btn--loading");
 
     pageNo += 1;
     let SEARCH_LINK = `https://api.unsplash.com/search/photos/?client_id=${API_KEY}&query=${searchParam}&page=${pageNo}&per_page=30`;
 
-    await fetch(SEARCH_LINK)
+    fetch(SEARCH_LINK)
     .then(res => res.json())
     .then(data => {
         allImages = data.results;
