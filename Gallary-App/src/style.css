@@ -64,9 +64,8 @@ table {
 }
 
 .search-container {
-    background: url("assets/forrest-background.jpg");
+    background: url("assets/background-mountain.jpg");
     /* background-repeat: no-repeat; */
-    /* object-fit: cover; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,7 +110,6 @@ table {
     border-radius: 10px;
     padding: 10px 20px;
     font-size: 0.8rem;
-    /* width: calc(100%-50px); */
     width: 100%;
     max-width: 300px;
     margin: 1rem;
